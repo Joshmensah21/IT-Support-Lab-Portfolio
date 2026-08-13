@@ -16,7 +16,7 @@ In this phase, I diagnosed local network adapter settings, tested external IP re
 ## Phase 2: Role-Based Access Control & User Provisioning
 
 ### 3. Security Group & User Creation
-Provisioned an departmental security group and added a new user account adhering to role-based access management.
+Created an IT security group and added a new user account to give them the right permissions.
 
 * **Commands Executed:**
   * `sudo groupadd IT_Helpdesk` — Creates the secondary security group for IT personnel.
@@ -29,7 +29,7 @@ Provisioned an departmental security group and added a new user account adhering
 
 ### 4. Shared Directory & Permission Hardening
 
-Created a secure departmental directory and applied strict role-based access control.
+Created a departmental directory and applied strict permissions so only authorized team members can access it.
 
 Commands Executed:
 * `sudo mkdir /opt/IT_Secure_Docs` — Creates the shared directory under /opt for departmental files.
