@@ -27,12 +27,12 @@ Provisioned an departmental security group and added a new user account adhering
 
 ![User and Group Onboarding](03_user_group_provisioning.png)
 
-4. Shared Directory & Permission Hardening
+### 4. Shared Directory & Permission Hardening
 
 Created a secure departmental directory and applied strict role-based access control enforcing the Principle of Least Privilege.
 
 Commands Executed:
-sudo mkdir /opt/IT_Secure_Docs — Creates the shared directory under /opt for departmental files.
-sudo chown -R root:IT_Helpdesk /opt/IT_Secure_Docs — Sets user ownership to root and group ownership to IT_Helpdesk recursively (-R).
-sudo chmod -R 770 /opt/IT_Secure_Docs — Applies 770 octal permissions (rwxrwx---), granting full access to root and IT_Helpdesk members while completely blocking all other system users.
-ls -ld /opt/IT_Secure_Docs — Displays long-format directory metadata to verify ownership, group assignment, and absolute permissions.
+* `sudo mkdir /opt/IT_Secure_Docs` — Creates the shared directory under /opt for departmental files.
+* `sudo chown -R root:IT_Helpdesk /opt/IT_Secure_Docs` — Sets user ownership to root and group ownership to IT_Helpdesk recursively (-R).
+* `sudo chmod -R 770 /opt/IT_Secure_Docs` — Applies 770 octal permissions (rwxrwx---), granting full access to root and IT_Helpdesk members while completely blocking all other system users.
+* `ls -ld /opt/IT_Secure_Docs` — Displays long-format directory metadata to verify ownership, group assignment, and absolute permissions.
