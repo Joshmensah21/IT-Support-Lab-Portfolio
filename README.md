@@ -36,3 +36,10 @@ Commands Executed:
 * `sudo chown -R root:IT_Helpdesk /opt/IT_Secure_Docs` — Sets user ownership to root and group ownership to IT_Helpdesk recursively (-R).
 * `sudo chmod -R 770 /opt/IT_Secure_Docs` — Applies "770" permissions (rwxrwx---), granting full access to root and IT_Helpdesk members while completely blocking all other system users.
 * `ls -ld /opt/IT_Secure_Docs` — Displays long-format directory metadata to verify ownership, group assignment, and permissions.
+
+### Phase 3: Access Control Verification
+
+#### Authorized Access Test
+Switched to user `jdoe` (member of `IT_Helpdesk`) and verified full read/write capabilities inside `/opt/IT_Secure_Docs`.
+
+![Authorized Access Test](./screenshots/05_jdoe_permission_test_successful.png)
