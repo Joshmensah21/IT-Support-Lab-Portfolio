@@ -37,9 +37,21 @@ Commands Executed:
 * `sudo chmod -R 770 /opt/IT_Secure_Docs` — Applies "770" permissions (rwxrwx---), granting full access to root and IT_Helpdesk members while completely blocking all other system users.
 * `ls -ld /opt/IT_Secure_Docs` — Displays long-format directory metadata to verify ownership, group assignment, and permissions.
 
+![Secure Docs Permissions](04_directory_permissions.png)
+
 ### Phase 3: Access Control Verification
 
 #### Authorized Access Test
 Switched to user `jdoe` (member of `IT_Helpdesk`) and verified full read/write capabilities inside `/opt/IT_Secure_Docs`.
 
 ![Authorized Access Test](05_jdoe_permission_test_successful.png)
+
+#### Unauthorized Access Blocked Test (User: `guestuser`)
+Created a standard user account (`guestuser`) without adding them to `IT_Helpdesk` to test if unauthorized users are properly locked out.
+
+Commands Executed:
+* `sudo useradd -m -s /bin/bash guestuser` — Creates a home directory for the new user account named 'guestuser'
+* `sudo su - guestuser` — Switches to the guestuser account
+* `cd /opt/IT_Secure_Docs` — Attempted to access the IT department files, but guestuser was denied access because it is in the 'Other' group with 0 rwx permissions.
+
+![Unauthorized Access Test](06_unauthorized_access_blocked.png)
