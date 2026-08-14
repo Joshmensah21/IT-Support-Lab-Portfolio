@@ -42,4 +42,4 @@ Commands Executed:
 #### Authorized Access Test
 Switched to user `jdoe` (member of `IT_Helpdesk`) and verified full read/write capabilities inside `/opt/IT_Secure_Docs`.
 
-![Authorized Access Test](./screenshots/05_jdoe_permission_test_successful.png)
+![Authorized Access Test](05_jdoe_permission_test_successful.png)
