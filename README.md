@@ -15,7 +15,7 @@ In this phase, I diagnosed local network adapter settings, tested external IP re
 
 ## Phase 2: Role-Based Access Control & User Provisioning
 
-### 3. Security Group & User Creation
+### 1. Security Group & User Creation
 Created an IT security group and added a new user account to give them the right permissions.
 
 * **Commands Executed:**
@@ -27,7 +27,7 @@ Created an IT security group and added a new user account to give them the right
 
 ![User and Group Onboarding](03_user_group_provisioning.png)
 
-### 4. Shared Directory & Permission Hardening
+### 2. Shared Directory & Permission Handling
 
 Created a departmental directory and applied strict permissions so only authorized team members can access it.
 
