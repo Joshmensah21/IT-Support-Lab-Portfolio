@@ -1,5 +1,5 @@
-# IT-Support-Lab-Portfolio
-Hands-on IT Support, Systems Administration, and Networking Lab Projects
+# IT-Support-VirtualBox-Labs
+Linux User Permissions & Diagnostics Lab
 ---
 ## Phase 1: Network Diagnostics & Connectivity
 
