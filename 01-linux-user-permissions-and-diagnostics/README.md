@@ -9,9 +9,9 @@ In this phase, I diagnosed local network adapter settings, tested external IP re
 * **Tested Internet Reachability:** `ping -c 4 8.8.8.8` — Sends ICMP Echo Requests to Google's public DNS server to confirm outbound internet connectivity (bypassing DNS).
 * **Tested DNS Resolution:** `ping -c 4 google.com` — Verifies that the system can translate human-readable domain names into machine-readable IP addresses.
 
-![Local Interface Check](01_ip_a_network_check.png)
+![Local Interface Check](screenshots/01_ip_a_network_check.png)
 
-![ICMP and DNS Test](02_ping_dns_test.png)
+![ICMP and DNS Test](screenshots/02_ping_dns_test.png)
 
 ## Phase 2: Role-Based Access Control & User Provisioning
 
@@ -25,7 +25,7 @@ Created an IT security group and added a new user account to give them the right
   * `sudo usermod -aG IT_Helpdesk jdoe` — Appends user `jdoe` to the `IT_Helpdesk` secondary group without overwriting existing memberships.
   * `id jdoe` — Validates user UID, default GID, and assigned group memberships.
 
-![User and Group Onboarding](03_user_group_provisioning.png)
+![User and Group Onboarding](screenshots/03_user_group_provisioning.png)
 
 ### 2. Shared Directory & Permission Handling
 
@@ -37,14 +37,14 @@ Commands Executed:
 * `sudo chmod -R 770 /opt/IT_Secure_Docs` — Applies "770" permissions (rwxrwx---), granting full access to root and IT_Helpdesk members while completely blocking all other system users.
 * `ls -ld /opt/IT_Secure_Docs` — Displays long-format directory metadata to verify ownership, group assignment, and permissions.
 
-![Secure Docs Permissions](04_directory_permissions.png)
+![Secure Docs Permissions](screenshots/04_directory_permissions.png)
 
 ### Phase 3: Access Control Verification
 
 #### Authorized Access Test
 Switched to user `jdoe` (member of `IT_Helpdesk`) and verified full read/write capabilities inside `/opt/IT_Secure_Docs`.
 
-![Authorized Access Test](05_jdoe_permission_test_successful.png)
+![Authorized Access Test](screenshots/05_jdoe_permission_test_successful.png)
 
 #### Unauthorized Access Blocked Test (User: `guestuser`)
 Created a standard user account (`guestuser`) without adding them to `IT_Helpdesk` to test if unauthorized users are properly locked out.
@@ -54,4 +54,4 @@ Commands Executed:
 * `sudo su - guestuser` — Switches to the guestuser account
 * `cd /opt/IT_Secure_Docs` — Attempted to access the IT department files, but guestuser was denied access because it is in the 'Other' group with 0 rwx permissions.
 
-![Unauthorized Access Test](06_unauthorized_access_blocked.png)
+![Unauthorized Access Test](screenshots/06_unauthorized_access_blocked.png)
